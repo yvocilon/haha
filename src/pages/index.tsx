@@ -36,10 +36,23 @@ export default function Page() {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 85vh;
+                    height: 100%;
                     padding: 0;
                     margin: 0;
                     width: 100%;
+                }
+
+                @media (max-width: 1200px) {
+                    h1 {
+                        flex-direction: column;
+                        height: auto;
+                        align-items: flex-start;
+                    }
+
+                    div {
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                    }
                 }
             `}</style>
             <style jsx global>{`
@@ -53,7 +66,8 @@ export default function Page() {
                 }
 
                 html,
-                body {
+                body,
+                #__next {
                     margin: 0;
                     padding: 0;
                     width: 100%;
