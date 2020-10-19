@@ -1,8 +1,17 @@
 import AnimatedList from "../components/animated-list/AnimatedList";
+import Head from "next/head";
 
 export default function Page() {
     return (
         <>
+            <Head>
+                <title>Yvo Cilon - Freelance Developer</title>
+                <meta
+                    name="viewport"
+                    content="initial-scale=1.0, width=device-width"
+                />
+            </Head>
+
             <div className="wrapper">
                 <h1>
                     Freelance
@@ -42,16 +51,27 @@ export default function Page() {
                     width: 100%;
                 }
 
+                // well this was fun..
                 @media (max-width: 1200px) {
                     h1 {
+                        font-size: calc(var(--font-size) - 1rem);
+                    }
+                }
+
+                @media (max-width: 1000px) {
+                    h1 {
+                        font-size: calc(var(--font-size) - 3rem);
+                    }
+                }
+
+                @media (max-width: 900px) {
+                    div {
+                        flex-direction: column;
+                    }
+                    h1 {
+                        font-size: var(--font-size);
                         flex-direction: column;
                         height: auto;
-                        align-items: flex-start;
-                    }
-
-                    div {
-                        align-items: flex-start;
-                        justify-content: flex-start;
                     }
                 }
             `}</style>
@@ -62,7 +82,7 @@ export default function Page() {
                     --index: 0;
                     --height: 6rem;
                     --transition-duration: 0.5s;
-                    --font-size: 5rem;
+                    --font-size: 3rem;
                 }
 
                 html,
